@@ -1,4 +1,7 @@
 #!/bin/bash
+# Output all commands
+set -x
+
 # Install PoP and WordPress through Composer:
 composer create-project leoloso/pop-app-wp $FOLDER_NAME dev-master
 
