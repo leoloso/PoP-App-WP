@@ -4,27 +4,53 @@ Project to install a PoP application running on WordPress.
 
 ## Install
 
-**1. Download WordPress and all PoP components via Composer**
+Via [Composer](https://getcomposer.org) and [WP-CLI](https://wp-cli.org/):
+
+1. Create the [WordPress database and user](https://wordpress.org/support/article/how-to-install-wordpress/#step-2-create-the-database-and-a-user)
+2. Set environment variables: Copy the code below to an editor, replace all values (such as `{YOUR_SITE_FOLDER_NAME}`) with your own values, and then paste it on the terminal to execute:
 
 ```bash
-$ composer create-project leoloso/pop-app-wp yoursitename
+export FOLDER_NAME={YOUR_SITE_FOLDER_NAME} #eg: MyAwesomeSite
+export DB_NAME={YOUR_SITE_DB_NAME} #eg: database
+export DB_USER={YOUR_SITE_DB_USER} #eg: admin
+export DB_PASSWORD={YOUR_SITE_DB_PASSWORD} #eg: sADF!kl9diq@#Sjfk
+export DB_HOST={YOUR_SITE_DB_HOST} #eg: 127.0.0.1
+export SITE_URL_WITHOUT_HTTP={YOUR_SITE_URL_WITHOUT_HTTP} #eg: localhost
+export SITE_URL_WITH_HTTP={YOUR_SITE_URL_WITH_HTTP} #eg: http://localhost
+export SITE_NAME="{YOUR_SITE_NAME}" #eg: "My awesome website"
+export ADMIN_USER={ADMIN_USER} #eg: admin
+export ADMIN_PASSWORD={ADMIN_PASSWORD} #eg: JKo$@sfjASD00w
+export ADMIN_EMAIL={ADMIN_EMAIL} #eg: pedro@example.com
 ```
 
-**2. Install the WordPress instance**
+3. In the terminal, `cd` to the folder where to install the site, and execute script:
 
-- [Install the WordPress database](https://wordpress.org/support/article/how-to-install-wordpress/#step-2-create-the-database-and-a-user)
-- [Configure `wp-config.php`](https://wordpress.org/support/article/how-to-install-wordpress/#step-3-set-up-wp-config-php)
-- [Run the install script](https://wordpress.org/support/article/how-to-install-wordpress/#step-5-run-the-install-script)
+```bash
+wget -O - https://raw.githubusercontent.com/leoloso/pop-app-wp/master/install.sh | bash
+```
 
-**3. Modify the Site Address (URL)**
+(Or copy/paste the contents of [install.sh](https://github.com/leoloso/pop-app-wp/blob/master/install.sh) in the terminal, eg: for Windows users)
 
-Log in to the WordPress admin panel and go to Settings => General (`wp-admin/options-general.php`). There, remove the `/wp` bit from the Site Address (URL) input and save.
+4. Wait for a few minutes ☕️😁
+5. Check that WordPress and PoP were successfully installed:
+    - WordPress site: {YOUR_SITE_URL_WITH_HTTP}
+    - WordPress admin: {YOUR_SITE_URL_WITH_HTTP}/wp/wp-admin/
+    - PoP API (REST for posts): {YOUR_SITE_URL_WITH_HTTP}/posts/?action=api&datastructure=rest
 
-<!--
-## Setting-up environment variables
+### Configure application options (optional)
 
-If needed, create file `config/.env` (and other more specific files, following [Symfony's Dotenv component](https://symfony.com/doc/current/components/dotenv.html)'s instructions) including all required environment variables for the application. These files, containing environment information, must not be saved under version control.
--->
+Upon installation, the Composer script will create file `config/.env` including default values for application options (passed as environment variables). You can further edit this file, or even create more specific ones (following [Symfony's Dotenv component](https://symfony.com/doc/current/components/dotenv.html)'s file hierarchy).
+
+## Installed Components
+
+This bootstrapper will install the following components (for WordPress):
+
+Coming soon...
+
+## Usage
+
+Coming soon...
+
 ## Credits
 
 - [Leonardo Losoviz][link-author]
