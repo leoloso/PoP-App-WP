@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Install PoP and WordPress through Composer:
-echo "Downloading and installing PoP and WordPress through Composer... (this may take a few minutes)"
+echo "Downloading and installing PoP and WordPress through Composer..."
+echo "(this may take a few minutes)"
 composer create-project leoloso/pop-app-wp $FOLDER_NAME dev-master
 
 # Install the must-use plugins:
