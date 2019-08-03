@@ -47,6 +47,7 @@
         "getpop/taxonomyquery-wp": "dev-master",
         "getpop/usermeta-wp": "dev-master",
         "getpop/users-wp": "dev-master",
+        "leoloso/pop-api-wp": ">=1.0",
         "johnpbloch/wordpress": ">=5.2"
     },
     "extra": {
@@ -71,7 +72,11 @@
     },
     "scripts": {
         "post-root-package-install": [
+            "php 'vendor/leoloso/pop-api-wp/install/scripts/create-dotenv-file.php'",
             "php 'install/scripts/create-dotenv-file.php'"
+        ],
+        "post-create-project-cmd": [
+            "./vendor/leoloso/pop-api-wp/install/install.sh"
         ]
     }
 }

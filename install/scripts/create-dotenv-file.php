@@ -17,7 +17,6 @@ if ('$ENV' === 'PROD') {
         'ENQUEUE_FILES_TYPE' => 'bundlegroup',
         'INCLUDE_SCRIPTS_AFTER_HTML' => true,
         'DISABLE_SERVER_SIDE_RENDERING' => false,
-        'USE_CACHE' => true,
         'USE_MINIFIED_RESOURCES' => true,
         'ACCESS_EXTERNAL_CDN_RESOURCES' => false,
         'USE_BUNDLED_RESOURCES' => true,
@@ -29,20 +28,13 @@ if ('$ENV' === 'PROD') {
         'DISABLE_SAVING_DEFINITION_FILE_ON_EACH_REQUEST' => true,
         'COMPACT_RESPONSE_JSON_KEYS' => false,
         'USE_LOCAL_STORAGE' => true,
-        'ENABLE_CONFIG_BY_PARAMS' => false,
         'DISABLE_JS' => false,
         'LOAD_FRAME_RESOURCES' => false,
         'BUNDLE_CHUNK_SIZE' => 4,
         'LOAD_DYNAMICALLY_GENERATED_RESOURCE_FILES' => true,
         'DISABLE_PRELOADING_PAGES' => false,
         'THROW_EXCEPTION_ON_TEMPLATE_ERROR' => false,
-        'ENABLE_EXTRA_ROUTES_BY_PARAMS' => false,
-        'FAIL_IF_SUBCOMPONENT_DATALOADER_IS_UNDEFINED' => false,
         'DISABLE_SENDING_EMAILS_BY_AWS_SES' => false,
-        'DISABLE_API' => false,
-        'DISABLE_CUSTOM_CMS_CODE' => false,
-        'EXTERNAL_SITES_RUN_SAME_SOFTWARE' => false,
-        'IS_CONFIG_CACHE_DEBUG' => false,
     ];
 } else {
     $lines = [
@@ -58,7 +50,6 @@ if ('$ENV' === 'PROD') {
         'ENQUEUE_FILES_TYPE' => 'bundlegroup',
         'INCLUDE_SCRIPTS_AFTER_HTML' => false,
         'DISABLE_SERVER_SIDE_RENDERING' => false,
-        'USE_CACHE' => false,
         'USE_MINIFIED_RESOURCES' => false,
         'ACCESS_EXTERNAL_CDN_RESOURCES' => false,
         'USE_BUNDLED_RESOURCES' => false,
@@ -70,26 +61,19 @@ if ('$ENV' === 'PROD') {
         'DISABLE_SAVING_DEFINITION_FILE_ON_EACH_REQUEST' => true,
         'COMPACT_RESPONSE_JSON_KEYS' => false,
         'USE_LOCAL_STORAGE' => false,
-        'ENABLE_CONFIG_BY_PARAMS' => false,
         'DISABLE_JS' => false,
         'LOAD_FRAME_RESOURCES' => false,
         'BUNDLE_CHUNK_SIZE' => 4,
         'LOAD_DYNAMICALLY_GENERATED_RESOURCE_FILES' => true,
         'DISABLE_PRELOADING_PAGES' => false,
         'THROW_EXCEPTION_ON_TEMPLATE_ERROR' => true,
-        'ENABLE_EXTRA_ROUTES_BY_PARAMS' => false,
-        'FAIL_IF_SUBCOMPONENT_DATALOADER_IS_UNDEFINED' => true,
         'DISABLE_SENDING_EMAILS_BY_AWS_SES' => false,
-        'DISABLE_API' => false,
-        'DISABLE_CUSTOM_CMS_CODE' => false,
-        'EXTERNAL_SITES_RUN_SAME_SOFTWARE' => false,
-        'IS_CONFIG_CACHE_DEBUG' => true,
     ];
 }
 $output = '';
 foreach($lines as $variable => $value) {
     $output .= $variable.'='.(is_bool($value) ? ($value ? "true" : "false") : $value).PHP_EOL;
 }
-$fp = fopen(dirname(dirname(dirname(__FILE__))).'/config/.env', 'w');
+$fp = fopen(dirname(dirname(dirname(__FILE__))).'/config/.env', 'a');
 fwrite($fp, $output);
 fclose($fp);
