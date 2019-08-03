@@ -3,7 +3,7 @@
  * Create the .env configuration files with default values for DEV/PROD environments
  */
 $lines = [];
-if ('$ENV' === 'PROD') {
+if (getenv('ENV') === 'PROD') {
     $lines = [
         'USE_APPSHELL' => false,
         'DISABLE_SERVICE_WORKERS' => false,
@@ -74,6 +74,8 @@ $output = '';
 foreach($lines as $variable => $value) {
     $output .= $variable.'='.(is_bool($value) ? ($value ? "true" : "false") : $value).PHP_EOL;
 }
-$fp = fopen($_SERVER['PWD'].'/config/.env', 'a');
+// Append file
+$file = $_SERVER['PWD'].'/config/.env';
+$fp = fopen($file, 'a');
 fwrite($fp, $output);
 fclose($fp);
