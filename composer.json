@@ -47,7 +47,7 @@
         "getpop/taxonomyquery-wp": "dev-master",
         "getpop/usermeta-wp": "dev-master",
         "getpop/users-wp": "dev-master",
-        "leoloso/pop-api-wp": ">=1.0",
+        "leoloso/pop-api-wp": ">=1.2",
         "johnpbloch/wordpress": ">=5.2"
     },
     "extra": {
