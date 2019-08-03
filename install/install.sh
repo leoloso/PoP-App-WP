@@ -4,7 +4,7 @@ YELLOW='\033[1;33m'
 NC='\033[0m' # No Color
 
 # Install PoP and WordPress through Composer:
-echo -e "Downloading and installing PoP and WordPress through Composer... ${YELLOW}(this may take a few minutes)${NC}"
+echo -e "Downloading and installing a PoP application, and WordPress, through Composer... ${YELLOW}(this may take a few minutes)${NC}"
 composer create-project leoloso/pop-app-wp $FOLDER_NAME
 
 # Install the must-use plugins:
