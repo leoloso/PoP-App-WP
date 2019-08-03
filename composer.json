@@ -72,7 +72,6 @@
     },
     "scripts": {
         "post-create-project-cmd": [
-            "php 'vendor/leoloso/pop-api-wp/install/scripts/create-dotenv-file.php'",
             "php 'install/scripts/create-dotenv-file.php'",
             "./install/install.sh"
         ]
