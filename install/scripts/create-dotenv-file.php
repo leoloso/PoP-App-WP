@@ -74,6 +74,6 @@ $output = '';
 foreach($lines as $variable => $value) {
     $output .= $variable.'='.(is_bool($value) ? ($value ? "true" : "false") : $value).PHP_EOL;
 }
-$fp = fopen(dirname(dirname(dirname(__FILE__))).'/config/.env', 'a');
+$fp = fopen($_SERVER['PWD'].'/config/.env', 'a');
 fwrite($fp, $output);
 fclose($fp);
