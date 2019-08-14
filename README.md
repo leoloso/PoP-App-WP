@@ -57,7 +57,7 @@ composer create-project leoloso/pop-app-wp
 
     - 👉WordPress site: `{YOUR_SITE_URL_WITH_HTTP}`
     - 👉WordPress admin: `{YOUR_SITE_URL_WITH_HTTP}`/wp/wp-admin/
-    - 👉PoP API: `{YOUR_SITE_URL_WITH_HTTP}/posts/?action=api&datastructure=rest` (REST for posts)
+    - 👉PoP API: `{YOUR_SITE_URL_WITH_HTTP}/posts/api/?datastructure=rest` (REST for posts)
 
 ### Configure application options (optional)
 
