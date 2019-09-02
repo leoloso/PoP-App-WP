@@ -54,7 +54,7 @@ composer create-project leoloso/pop-app-wp
 
 4. Wait for a few minutes ☕️😁
 
-5. Execute `install` again to copy the WordPress must-use plugins under /mu-plugins (somehow it doesn't do it with `create-project`):
+5. Execute `install` again to copy the WordPress must-use plugins under folder `/mu-plugins` (somehow it doesn't do it with `create-project`):
 
 ```bash
 $ composer install
