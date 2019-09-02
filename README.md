@@ -53,11 +53,18 @@ composer create-project leoloso/pop-app-wp
 ```
 
 4. Wait for a few minutes ☕️😁
-5. ✅ The site is installed under:
 
-    - 👉WordPress site: `{YOUR_SITE_URL_WITH_HTTP}`
-    - 👉WordPress admin: `{YOUR_SITE_URL_WITH_HTTP}`/wp/wp-admin/
-    - 👉PoP API: `{YOUR_SITE_URL_WITH_HTTP}/posts/api/?datastructure=rest` (REST for posts)
+5. Execute `install` again to copy the WordPress must-use plugins under /mu-plugins (somehow it doesn't do it with `create-project`):
+
+```bash
+$ composer install
+```
+
+6. ✅ The site is installed under:
+
+- 👉WordPress site: `{YOUR_SITE_URL_WITH_HTTP}`
+- 👉WordPress admin: `{YOUR_SITE_URL_WITH_HTTP}`/wp/wp-admin/
+- 👉PoP API: `{YOUR_SITE_URL_WITH_HTTP}/posts/api/?datastructure=rest` (REST for posts)
 
 ### Configure application options (optional)
 
