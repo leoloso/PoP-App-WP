@@ -64,7 +64,7 @@ $ composer install
 
 - 👉WordPress site: `{YOUR_SITE_URL_WITH_HTTP}`
 - 👉WordPress admin: `{YOUR_SITE_URL_WITH_HTTP}`/wp/wp-admin/
-- 👉PoP API: `{YOUR_SITE_URL_WITH_HTTP}/api/?fields=__schema`
+- 👉PoP API: `{YOUR_SITE_URL_WITH_HTTP}/api/?query=__schema`
 
 ### Configure application options (optional)
 
