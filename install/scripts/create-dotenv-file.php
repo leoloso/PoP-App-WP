@@ -36,6 +36,7 @@ addEnvVariablesToConfigFile([
     'DISABLE_PRELOADING_PAGES' => false,
     'THROW_EXCEPTION_ON_TEMPLATE_ERROR' => false,
     'DISABLE_SENDING_EMAILS_BY_AWS_SES' => false,
+    'NAMESPACE_TYPES_AND_INTERFACES' => false,
 ], [
     // DEV
     'USE_APPSHELL' => false,
@@ -68,4 +69,5 @@ addEnvVariablesToConfigFile([
     'DISABLE_PRELOADING_PAGES' => false,
     'THROW_EXCEPTION_ON_TEMPLATE_ERROR' => true,
     'DISABLE_SENDING_EMAILS_BY_AWS_SES' => false,
+    'NAMESPACE_TYPES_AND_INTERFACES' => false,
 ]);
